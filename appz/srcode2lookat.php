@@ -1,3 +1,6 @@
+//
+// Copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
+//
 <?php
 
 //BUT THERE IS NOTHING TO SEE HERE...
