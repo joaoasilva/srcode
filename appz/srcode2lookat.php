@@ -13,15 +13,20 @@ require(MODELPATH . 'work.php');
 require(MODELPATH . 'others.php');
 if (file_exists(MODELPATH . 'emailform.php')){ //It's just a email class using RESTFull to my Mandrill account
 	require(MODELPATH . 'emailform.php');
+	$use_fake_sendmail = true;
 }
 require(APPPATH . 'controller.php');
 
 if (isset($_POST['txt_email']) && trim($_POST['txt_subject']) && trim($_POST['txt_message']) ){
-	$data = new stdClass();
-	foreach($_POST as $var => $val){
-		$data->{$var} = $val;
+	if ($use_fake_sendmail){
+		$data = new stdClass();
+		foreach($_POST as $var => $val){
+			$data->{$var} = $val;
+		}
+		new Email($data);
+	}else{
+		echo "Email not sent and you know why... or should :)";
 	}
-	new Email($data);
 }else{
 	new Controller();
 }
