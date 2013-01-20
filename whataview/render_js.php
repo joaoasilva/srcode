@@ -9,8 +9,20 @@
     }
     ?>
     <script type="text/javascript">
-    	$('#menu').affix();
-    	$('.tolinks').urlToLink({target:'_blank'});
+
+        $(document).ready(function(){
+            $("#formContact").validate({
+                submitHandler: function(form) {
+                    $.post("index.php", $("#formContact").serialize(), function(data){
+                        alert(data);
+                        $('#emailForm').modal('hide')
+                    });
+                }
+            });
+            $('#menu').affix();
+            $('.tolinks').urlToLink({target:'_blank'});
+        });
+
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-37826008-1']);

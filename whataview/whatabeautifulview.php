@@ -7,7 +7,8 @@
         </p>
         <p class="lead"><?=$first?> <?=$last?></p>
         <p><abbr title="Call to Portugal">Mobile:</abbr> <?=$mobile;?></p>
-        <span class="add-on"><a href="mailto:<?=$email;?>"><i class="icon-envelope"></i>&nbsp;<?=$email;?></a></span> 
+        
+        <a href="#emailForm" role="button" class="btn" data-toggle="modal">Contact me...</a> 
       </div>
 
       <div class="title">
@@ -117,3 +118,47 @@
       </div>
 
     </div> <!-- /container -->
+
+    <!-- Button to trigger modal -->
+    
+     
+    <!-- Modal -->
+    <div id="emailForm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="emailFormLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="emailFormLabel">Please leave a message after the bip...</h3>
+      </div>
+
+      <form id="formContact" name="formContact">
+        <div class="modal-body">
+        
+          <div class="control-group">
+              <label class="control-label" for="txt_email">Email:</label>
+              <div class="controls">
+                  <input class="input-large required email" id="txt_email" name="txt_email" type="text" placeholder="Email" maxlength="60" size="30">
+                  <p class="help-block"></p>
+              </div>
+          </div>
+          <div class="control-group">
+              <label class="control-label" for="txt_subject">Subject:</label>
+              <div class="controls">
+                  <input class="input-large required" id="txt_subject" name="txt_subject" type="text" placeholder="Subject" maxlength="60" size="30">
+                  <p class="help-block"></p>
+              </div>
+          </div>
+          <h3>bip!</h3>
+          <div class="control-group">
+              <label class="control-label" for="txt_message">Message:</label>
+              <div class="controls">
+                  <textarea id="txt_message" class="required" name="txt_message" placeholder="Message"></textarea>
+                  <p class="help-block"></p>
+              </div>
+          </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <input type="submit" class="btn btn-primary" value="Send...">
+        </div>
+      </form>  
+    </div>    
