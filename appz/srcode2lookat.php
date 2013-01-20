@@ -11,6 +11,9 @@ require(MODELPATH . 'skills.php');
 require(MODELPATH . 'studies.php');
 require(MODELPATH . 'work.php');
 require(MODELPATH . 'others.php');
+
+$use_fake_sendmail = false;
+
 if (file_exists(MODELPATH . 'emailform.php')){ //It's just a email class using RESTFull to my Mandrill account
 	require(MODELPATH . 'emailform.php');
 	$use_fake_sendmail = true;
