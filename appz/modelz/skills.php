@@ -1,0 +1,27 @@
+<?php
+
+class Skills extends Model{
+	public function getSkills(){
+		//JUST TO SHOW HERITAGE
+		return array(
+				'PHP',
+				'MVC',
+				'OOP',
+				'HTML',
+				'CSS',
+				'JavaScript',
+				'XML',
+				'ud121',
+				'Joomla',
+				'Symfony',
+				'Python',
+				'C#',
+				'ASP.NET',
+				'Streaming Media',
+				'Linux',
+				'Web Services',
+				'LAMP',
+				'MIPS'
+				);
+	}
+}
