@@ -3,4 +3,4 @@ srcode
 
 João Silva CV
 
-This is just a tiny MVC framework using OOP to show my CV.
+This is just a tiny MVC framework to show my CV.
