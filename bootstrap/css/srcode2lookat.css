@@ -15,7 +15,7 @@ body {
   margin-top: -30px;
   text-align: center;
 }
-.jumbotron p{
+.jumbotron .lead{
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 
@@ -77,7 +77,7 @@ blockquote {
 }
 
 .affix {
-  margin-left: 590px;
+  margin-left: 570px;
 }
 
 .modal label {
@@ -108,5 +108,9 @@ blockquote {
 }
 
 .modal {
-    width: 625px;
+  width: 625px;
+}
+
+.phone {
+  padding-left: 55px;
 }

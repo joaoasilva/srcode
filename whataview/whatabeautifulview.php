@@ -7,7 +7,7 @@
         </p>
         <p class="lead"><?=$first?> <?=$last?></p>
         <p><a href="#emailForm" role="button" class="btn" data-toggle="modal">Contact me...</a></p> 
-        <p><abbr title="Call to Portugal">Mobile:</abbr> <?=$mobile;?></p>
+        <p class="phone"><abbr title="Call to Portugal">Mobile:</abbr> <?=$mobile;?></p>
         
       </div>
 
