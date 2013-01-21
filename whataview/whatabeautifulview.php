@@ -6,9 +6,9 @@
           <a href="skype:<?=$skype_id;?>?add"><img src="http://download.skype.com/share/skypebuttons/buttons/add_blue_white_195x63.png" style="border: none;" width="195" height="63" alt="Add me to Skype" /></a>
         </p>
         <p class="lead"><?=$first?> <?=$last?></p>
+        <p><a href="#emailForm" role="button" class="btn" data-toggle="modal">Contact me...</a></p> 
         <p><abbr title="Call to Portugal">Mobile:</abbr> <?=$mobile;?></p>
         
-        <a href="#emailForm" role="button" class="btn" data-toggle="modal">Contact me...</a> 
       </div>
 
       <div class="title">
@@ -113,14 +113,15 @@
 
       <hr>
 
+      <div class="alert alert-info">
+            You can access this SRCODE2LOOKAT here: <code><a href="https://github.com/joaoasilva/srcode" target="_blank">https://github.com/joaoasilva/srcode</a></code>
+          </div>
+
       <div class="footer">
-        <p>&copy; SCRODE2LOOKAT <?=date('Y');?></p>
+        <p>&copy; SRCODE2LOOKAT <?=date('Y');?></p>
       </div>
 
-    </div> <!-- /container -->
-
-    <!-- Button to trigger modal -->
-    
+    </div> <!-- /container -->    
      
     <!-- Modal -->
     <div id="emailForm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="emailFormLabel" aria-hidden="true">

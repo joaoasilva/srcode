@@ -7,7 +7,6 @@ class Model{
 
 	const SKYPE = 'joaoacsilva'; //JUST TO USE CONSTANTS
 	const MOBILE = '+351 916 263 710';
-	const EMAIL = 'joaoasilva@gmail.com';
 
 	public function cv_info(){
 

@@ -7,6 +7,8 @@
     <meta name="description" content="Very tinnnnnny smalllllll MVC 2 play with OOP">
     <meta name="author" content="João Silva">
 
+    <meta name="robots" content="noindex">
+
     <link rel="icon" type="image/x-icon" href="bootstrap/img/favicon.ico" />
 
     <!-- Le styles -->
