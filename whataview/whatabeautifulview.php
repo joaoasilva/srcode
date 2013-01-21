@@ -118,7 +118,7 @@
           </div>
 
       <div class="footer">
-        <p>&copy; SRCODE2LOOKAT <?=date('Y');?></p>
+        <p>SRCODE2LOOKAT &copy; João Silva <?=date('Y');?></p>
       </div>
 
     </div> <!-- /container -->    
