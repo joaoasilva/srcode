@@ -9,7 +9,7 @@ class Work extends Model{
 	public function getWork(){
 		return array(
 					date("Y") => array(
-								'last_month' => strtoupper( date("M") ),
+								'last_month' => 'Current',
 								'start_month' => 'APR',
 								'start_year' => '2007',
 								'name' => 'AmplitudeNET, LDA',

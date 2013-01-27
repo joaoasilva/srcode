@@ -12,3 +12,6 @@ defined("VIEWPATH") or define("VIEWPATH", BASEPATH . 'whataview/');
 defined("MODELPATH") or define("MODELPATH", APPPATH . 'modelz/');
 
 require (BASEPATH . 'appz/srcode2lookat.php');
+
+
+
