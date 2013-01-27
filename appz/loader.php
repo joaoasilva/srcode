@@ -17,7 +17,7 @@ class Loader{
     const EMAIL_FORM = '{EMAIL_FORM}';
     const JAVASCRIPT = '{JAVASCRIPT}';
 
-    const TMPLDIR  = 'whataview/';
+    const TMPLDIR  = 'templates/';
     const TMPLEXT  = '.xhtml';
 
     private $page = null;

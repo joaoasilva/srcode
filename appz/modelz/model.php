@@ -10,18 +10,6 @@ class Model{
 
 	public function cv_info(){
 
-		//JUST TO USE INHERITANCE
-		/*
-
-		$studies = new Studies();
-		$studies_arr = $studies->getStudies();
-
-		$work = new Work();
-		$work_arr = $work->getWork();
-
-		$others = new Others();
-		$others_arr = $others->getOthers();*/
-
 		// SIMULATES REAL DATA (it's real because it's my CV...)
 		return array(
 				'skype_id' => Model::SKYPE,
