@@ -5,15 +5,30 @@
 
 class Model{
 
+	//UNDER CONSTRUCTION!!!
+
+	protected $database;
+
 	const SKYPE = 'joaoacsilva'; //JUST TO USE CONSTANTS
 	const MOBILE = '+351 916 263 710';
+	const TABLE = 'cv';
 
 	public function cv_info(){
+		/*
+		
+		NOT FINISHED
+
+		$cv_info = $this->selectWhere(self::TABLE, '*', array('skype_id' => 'joaoacsilva'));
+		return $cv_info[0];
+		
+		NOT FINISHED
+		
+		*/
 
 		// SIMULATES REAL DATA (it's real because it's my CV...)
 		return array(
-				'skype_id' => Model::SKYPE,
-				'mobile' => Model::MOBILE,
+				'skype_id' => self::SKYPE,
+				'mobile' => self::MOBILE,
 				'first' => 'João',
 				'last' => 'Silva'
 				);
@@ -55,4 +70,52 @@ class Model{
 
 		return $js_arr;
 	}
+
+    private function connect_db() {
+        $this->database = new Database();
+        $this->database->connect();
+    }
+
+    private function select($table, $values){
+    	$table = mysql_real_escape_string($table);
+    	$values = mysql_real_escape_string($values);
+
+    	return $sql = 'select '.$values.' from '.$table;
+    }
+
+    private function where($sql, $values){
+
+    	$sql .= ' where ';
+
+    	$total = count($values);
+    	$counted = 0;
+
+    	if ($total){
+	    	foreach($values as $key => $val){
+	    		if ($counted && $counted != $total) $sql .= ' and ';
+	    		$sql .= ' ' . $key . ' = "' . $val . '"';
+	    	}
+	    }
+
+	    return $sql;
+    }
+
+    public function selectWhere($table, $fields, $values){
+    	$sql = $this->select($table, $fields);
+		$sql = $this->where($sql, $values);
+
+		return $this->queryMultiple($sql);
+    }
+
+    protected function querySingle($sql) {
+        $this->connect_db();
+        return $this->database->querySingle($sql);
+    }
+
+    protected function queryMultiple($sql) {
+        $this->connect_db();
+        return $this->database->queryMultiple($sql);
+    }
+
+
 }

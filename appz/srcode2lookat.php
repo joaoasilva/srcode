@@ -7,6 +7,8 @@
 
 require(APPPATH . 'loader.php');
 require(MODELPATH . 'model.php');
+require(MODELPATH . 'model_db.php');
+require(MODELPATH . 'mysql.php');
 require(MODELPATH . 'profile.php');
 require(MODELPATH . 'skills.php');
 require(MODELPATH . 'studies.php');

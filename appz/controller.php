@@ -22,7 +22,7 @@ class Controller{
 	
 	private function showcv(){
 		$this->loader->addKey(Loader::TITLE, 'Awesome CV to show OOP and a small MVC');
-
+		
 		$header_data = $this->model->cv_info();
 		$content_header = $this->loader->renderView('content_header', $header_data);
 		$this->loader->addKey(Loader::CONTENT_HEADER, $content_header);
