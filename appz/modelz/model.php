@@ -35,7 +35,7 @@ class Model{
 		*
 		* SIMULATES REAL DATA (it's real because it's my CV...)
 		*/
-$cv_info = $this->selectWhere(self::TABLE, '*', array('skype_id' => 'joaoacsilva'));
+
 		return array(
 				'skype_id' => self::SKYPE,
 				'mobile' => self::MOBILE,
