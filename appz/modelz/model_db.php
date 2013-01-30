@@ -1,31 +1,61 @@
 <?php
-//
-// Copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
-//
+/**
+ * 
+ * @author  João Silva
+ * @copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
+ * 
+ * This is were PHP talks with MYSQL
+ * 
+ * @todo  UNDER CONSTRUCTION!!!
+ * 
+ */
 
+/** 
+ * @package Modelz
+ */
 class Database {
-
-    //UNDER CONSTRUCTION!!!
     
     private $database   = 'cv';
     private $connection = null;
 
+    /**
+     * Method to connect to MySQL
+     */
     public function connect() {
         $db_access = new DBAccess();
-        $this->connection = $db_access->_MySQLConnect(); //JUST RETURN MySQL link identifier
+        /**
+         * @return JUST RETURN MySQL link identifier
+         */
+        $this->connection = $db_access->_MySQLConnect();
 
         if (!$this->connection) {
-            throw new Exception(mysql_error(), mysql_errno());
+            try {
+                throw new Exception();
+            }catch (Exception $e) {
+                echo $e . '</br>' . mysql_error() . '</br>' . mysql_errno();
+            }
         }
         if (!mysql_select_db($this->database)) {
-            throw new Exception(mysql_error(), mysql_errno());
+             try {
+                throw new Exception();
+            }catch (Exception $e) {
+                echo $e . '</br>' . mysql_error() . '</br>' . mysql_errno();
+            }
         }
     }
 
+    /**
+     * Method to disconnect from MySQL
+     */
     public function disconnect() {
         mysql_close($this->connection);
     }
 
+    /**
+     * Method to query MySQL and return first result
+     * @param string $sql 
+     * @return string
+     */
     public function querySingle($sql) {
         $result = $this->query($sql);
         if (!$result) {
@@ -39,6 +69,11 @@ class Database {
         return $row[0];
     }
 
+    /**
+     * Method to query MySQL and return all the results
+     * @param string $sql 
+     * @return array
+     */
     public function queryMultiple($sql) {
         $result = $this->query($sql);
         if (!$result) {
@@ -57,6 +92,11 @@ class Database {
         return $arrResults;
     }
 
+    /**
+     * Method to query MySQL
+     * @param string $sql 
+     * @return mixed
+     */
     private function query($sql) {
         return mysql_query($sql, $this->connection);
     }

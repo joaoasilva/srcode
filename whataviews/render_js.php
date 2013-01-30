@@ -1,8 +1,14 @@
 <?php
-
-    // Le javascript
-    //==================================================
-    //Placed at the end of the document so the pages load faster
+    /**
+    * 
+    * @author  João Silva
+    * @copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
+    * 
+    *
+    * Le javascript
+    * ==================================================
+    * Placed at the end of the document so the pages load faster
+    */
     foreach($js_files as $key => $val){
         ?><script src='bootstrap/js/<?=$val;?>.js'></script>
         <?php

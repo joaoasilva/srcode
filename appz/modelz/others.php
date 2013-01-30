@@ -1,9 +1,15 @@
 <?php
+/**
+ * 
+ * @author  João Silva
+ * @copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
+ * 
+ * 
+ */
 
-//
-// Copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
-//
-
+/** 
+ * @package Modelz
+ */
 class Others extends Model{
 	//HERITAGE
 	public function getOthers(){

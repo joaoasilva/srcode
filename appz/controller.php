@@ -1,8 +1,16 @@
 <?php
-//
-// Copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
-//
+/**
+ * 
+ * @author  João Silva
+ * @copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
+ * 
+ * This is the controller that bridge data from models and process it with the views to output to the client
+ * 
+ */
 
+/** 
+ * @package Appz
+ */
 class Controller{
 	
 	private $loader = null;
@@ -10,7 +18,9 @@ class Controller{
 
 	private static $layout = 'home';
 	
-
+	/**
+	 * It all starts here
+	 */
 	public function Controller(){
 	
 		$this->loader = new Loader();
@@ -19,7 +29,10 @@ class Controller{
 		$this->showcv();
 		
 	}
-	
+
+	/**
+	 * Method that processes all the CV data
+	 */
 	private function showcv(){
 		$this->loader->addKey(Loader::TITLE, 'Awesome CV to show OOP and a small MVC');
 		
@@ -60,11 +73,20 @@ class Controller{
 
 	}
 
+	/**
+	 * Method to sort array by number, in this case the year so we can have the CV with a correct timetable order
+	 * @param array $arr 
+	 * @return array
+	 */
 	private function sortYear($arr){
 		krsort($arr, SORT_NUMERIC ); //LET'S JUST SORT BY YEAR
 		return $arr;
 	}
 
+	/**
+	 * Method to start the template processes and output the result
+	 * @param string $template 
+	 */
     protected function render($template) {
         $this->loader->loadTemplate($template, self::$layout);
         header('Content-Type', 'text/html, charset=UTF-8');
@@ -72,6 +94,11 @@ class Controller{
         echo $this->loader;
     }	
 
+    /**
+     * Method for the Javascript render
+     * @todo  Change it to JSON Data
+     * @return string
+     */
 	private function render_js(){
 		$jsdata = $this->model->dynamic_js();
 		return $this->loader->renderView('render_js', $jsdata);

@@ -1,9 +1,15 @@
 <?php
-//
-// Copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
-//
+/**
+ * 
+ * @author  João Silva
+ * @copyright (c) 2013 by João Silva. Under GPL license http://www.gnu.org/licenses/gpl.html
+ * 
+ */
 
-//BUT THERE IS NOTHING TO SEE HERE...
+
+/**
+ * BUT THERE IS NOTHING TO SEE HERE...
+ */
 
 require(APPPATH . 'loader.php');
 require(MODELPATH . 'model.php');
@@ -17,7 +23,10 @@ require(MODELPATH . 'others.php');
 
 $use_fake_sendmail = false;
 
-if (file_exists(MODELPATH . 'emailform.php')){ //It's just a email class using RESTFull to my Mandrill account
+/**
+ * It's just a email class using RESTFull to my Mandrill account
+ */
+if (file_exists(MODELPATH . 'emailform.php')){
 	require(MODELPATH . 'emailform.php');
 	$use_fake_sendmail = true;
 }
